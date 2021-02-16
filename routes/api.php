@@ -24,5 +24,4 @@
     Route::post('lis/create', 'LisController@create');
     Route::put('lis/update/{noReg}/{noLab}', 'LisController@update');
     Route::delete('lis/delete/{noReg}/{noLab}', 'LisController@delete');
-
  });
