@@ -17,7 +17,8 @@ Route::get('auth','AuthController@showLoginForm')->name('login');
 Route::post('auth','AuthController@loginproses')->name('login.post');
 Route::post('logout','AuthController@logout')->name('logout');
 
-
+Route::get('/webhook', 'Bot\TelegramBotController@webhook');
+Route::get('/updates', 'Bot\TelegramBotController@updateActivity');
 // group route prefix admin
 Route::group(['middleware' => ['auth'], 'prefix' => 'admin'], function()
 {

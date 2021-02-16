@@ -24,12 +24,13 @@ class CreateRequest extends FormRequest
     public function rules()
     {
        return [
+            'tgl_pemeriksaan' => 'required|date',
             'no_reg'     => 'required|min:12,max:13',
             'no_rm'      => 'required',
-            'no_sep'     => 'required',
-            'tgl_sep'    => 'required',
-            // 'tgl_pulang' => 'required',
-            'file_claim' => 'required|dokumen'
+            'no_lab'     => 'required',
+            'file_hasil'    => 'required|dokumen',
+            'user_verified' => 'required'
+
         ];
 
     }
@@ -38,13 +39,10 @@ class CreateRequest extends FormRequest
     {
         return [
             'no_reg.required' => 'No Reg harus di isi!',
-            // 'no_reg.unique' => 'No Reg sudah ada mohon (untuk mengubah silahkan edit)!',
             'no_rm.required' => 'No RM harus di isi!',
             'no_sep.required' => 'No SEP Harus di isi!',
-            'tgl_sep.required' => 'Tanggal SEP harus di isi!!',
-            // 'tgl_pulang.required' => 'Tanggal Pulang harus di isi!!',
-            // 'file_claim.required' => 'File Claim tidak boleh kosong!',
-            'file_claim.dokumen' => 'File tidak sesuai dengan aturan format (PDF,pdf)!'
+            'tgl_pemeriksaan.required' => 'Tanggal SEP harus di isi!!',
+            'file_hasil.dokumen' => 'File tidak sesuai dengan aturan format (PDF,pdf)!'
 		];
     }
 

@@ -17,9 +17,12 @@
 //      return $request->user();
 //  });
 
- Route::group(['middleware' => ['cors']], function() {
-    Route::get('eclaim/sep/{sep}', 'Api\ClaimSepController@index');
-    Route::post('eclaim/create', 'Api\ClaimSepController@create');
-    Route::put('eclaim/update/{no_reg}', 'Api\ClaimSepController@update');
-    Route::delete('eclaim/delete/{no_reg}', 'Api\ClaimSepController@delete');
+    Route::any('/{token}', 'Bot\TelegramBotController@index')->name('webhook');
+    
+ Route::group(['namespace' => 'Api', 'middleware' => ['cors']], function() {
+    Route::get('lis/show/{noRm}', 'LisController@getLis');
+    Route::post('lis/create', 'LisController@create');
+    Route::put('lis/update/{noReg}/{noLab}', 'LisController@update');
+    Route::delete('lis/delete/{noReg}/{noLab}', 'LisController@delete');
+
  });

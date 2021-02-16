@@ -4,9 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Repository\User\User;
-use App\Charts\EklaimChart;
-use App\Repository\Api\ClaimSep;
-use Ramsey\Uuid\Generator\RandomLibAdapter;
+
 
 class HomeController extends Controller
 {
@@ -16,7 +14,7 @@ class HomeController extends Controller
     {
         $this->user = New User();
         $this->middleware('auth');
-        $this->claimSep = new ClaimSep();
+        // $this->claimSep = new ClaimSep();
     }
     /**
      * Show the application dashboard.
@@ -25,12 +23,7 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
-        $rajal = count($this->getPerawatan(1));
-        $ranap = count($this->getPerawatan(2));
-        $radar = count($this->getPerawatan(3));
-        // dd($radar, $ranap, $radar);
-        $chart = $this->chart();
-        return view('home',compact('chart', 'rajal', 'ranap', 'radar'));
+        return view('home');
     }
 
     protected function getPerawatan($jnsRawat)

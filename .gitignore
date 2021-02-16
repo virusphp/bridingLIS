@@ -1,7 +1,8 @@
 /vendor
 /.idea
 # /config/database.php
-/public/images
+/public/images/pegawai
+/public/images/user
 /public/storage
 Homestead.json
 Homestead.yaml

@@ -103,6 +103,11 @@ function formatTgl($nilai)
 	return date('Y-m-d', strtotime($nilai));
 }
 
+function formatJam($nilai)
+{
+	return date('H:i:s', strtotime($nilai));
+}
+
 function typeRawat($nilai) 
 {
 	return substr($nilai, 0, 2);

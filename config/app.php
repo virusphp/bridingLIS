@@ -163,6 +163,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\SearchProvider::class,
 
+        App\Providers\ResponseServiceProvider::class,
     ],
 
     /*
