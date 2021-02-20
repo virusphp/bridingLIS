@@ -12,7 +12,7 @@
     <meta name="author" content="Łukasz Holeczek">
     <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>E-klaim Verifikasi</title>
+    <title>Laboratorium Information System</title>
     <!-- Icons-->
     <link href="{{ asset('core-ui/css/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('core-ui/css/simple-line-icons.css') }}" rel="stylesheet">
@@ -28,9 +28,9 @@
 
   </head>
   <body class="app header-fixed sidebar-fixed aside-menu-fixed sidebar-lg-show">
-    @include('layouts.verifikasi.partials.header')
+    @include('layouts.lis.partials.header')
     <div class="app-body">
-        @include('layouts.verifikasi.partials.sidebar')
+        @include('layouts.lis.partials.sidebar')
       <main class="main">
         <!-- Breadcrumb-->
         {{-- @include('layouts.simrs.partials.breadcrumb') --}}
@@ -44,8 +44,8 @@
           </div>
       </main>
     </div>
-    @include('layouts.verifikasi.partials.footer')
-    @include('layouts.verifikasi.partials.modal_guide')
+    @include('layouts.lis.partials.footer')
+    @include('layouts.lis.partials.modal_guide')
     <!-- CoreUI and necessary plugins-->
     <script src="{{ asset('core-ui/jquery/jquery.min.js') }}"></script>
     <!-- <script src="//code.jquery.com/jquery-1.12.4.js"></script> -->

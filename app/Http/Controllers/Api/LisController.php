@@ -50,6 +50,7 @@ class LisController extends Controller
         }
 
         $transform = $this->transform->mapLis($dataScan);
+
         return response()->jsonApi(200, "Sukses Simpana data!", $transform);
 
     }

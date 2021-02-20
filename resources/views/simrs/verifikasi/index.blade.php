@@ -1,4 +1,4 @@
-@extends('layouts.verifikasi.app')
+@extends('layouts.lis.app')
 
 @section('breadcrumb')
 <ol class="breadcrumb">

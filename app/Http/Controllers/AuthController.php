@@ -10,6 +10,8 @@ use App\User;
 
 class AuthController extends Controller
 {
+    protected $dbsimrs = "sqlsrv_prod_2";
+
     public function showLoginForm()
     {
         // dd("aku di sini");
