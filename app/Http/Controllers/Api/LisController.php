@@ -22,7 +22,7 @@ class LisController extends Controller
 
     public function getLis($noRm)
     {
-        $dataLis = $this->lis->getDataLis($noRm);
+        $dataLis = $this->lis->getLis($noRm);
 
         if ($dataLis->count() == 0) {
            $message = "Data LIS tidak di temukan!"; 
@@ -31,6 +31,20 @@ class LisController extends Controller
 
         $transform = $this->transform->mapDataLis($dataLis);
         return response()->jsonApi(200, "OK", $transform);
+    }
+
+    public function getDataLis($noReg, $noLab)
+    {
+        $dataLis = $this->lis->getDataLis($noReg, $noLab);
+
+        if (!$dataLis) {
+           $message = "Data LIS tidak di temukan!"; 
+           return response()->jsonApi(201, $message);
+        }
+
+        $transform = $this->transform->mapLis($dataLis);
+        return response()->jsonApi(200, "OK", $transform);
+
     }
 
     public function create(Request $r, ValidationCreateLis $valid)

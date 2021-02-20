@@ -65,7 +65,7 @@ class ScanLis extends ApiRepository
         return $response;
     }
 
-    public function getDataLis($noRm)
+    public function getLis($noRm)
     {
         return DB::table('hasil_pemeriksaan_laborat_file')->where('no_rm', $noRm)->get();
     }
@@ -99,7 +99,7 @@ class ScanLis extends ApiRepository
                                 ['no_lab', $data['no_lab']]
                             ])
                             ->first();
-                            
+
             if ($dataScan) {
                 $result = $dataScan;
                 $this->sendMessage($dataScan, "Insert");
@@ -111,6 +111,15 @@ class ScanLis extends ApiRepository
             return $e->getMessage();
         }
       
+    }
+
+    public function getDataLis($noReg, $noLab)
+    {
+        return DB::table('hasil_pemeriksaan_laborat_file')
+            ->where([ 
+                ['no_reg', $noReg],
+                ['no_lab', $noLab]
+            ])->first();
     }
 
     public function editLis($noReg, $noLab)

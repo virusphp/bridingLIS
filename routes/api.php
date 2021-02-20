@@ -21,6 +21,7 @@
     
  Route::group(['namespace' => 'Api', 'middleware' => ['cors']], function() {
     Route::get('lis/show/{noRm}', 'LisController@getLis');
+    Route::get('lis/show/data/{noReg}/{noLab}', 'LisController@getDataLis');
     Route::post('lis/create', 'LisController@create');
     Route::put('lis/update/{noReg}/{noLab}', 'LisController@update');
     Route::delete('lis/delete/{noReg}/{noLab}', 'LisController@delete');
