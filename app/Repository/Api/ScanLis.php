@@ -99,6 +99,7 @@ class ScanLis extends ApiRepository
                                 ['no_lab', $data['no_lab']]
                             ])
                             ->first();
+                            
             if ($dataScan) {
                 $result = $dataScan;
                 $this->sendMessage($dataScan, "Insert");
