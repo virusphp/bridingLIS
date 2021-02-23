@@ -88,11 +88,6 @@ function bulatan($nilai)
     return round($nilai, 2);
 }
 
-function noReg($nilai)
-{
-	return substr($nilai, 0, 2);
-}
-
 function ppk($nilai)
 {
 	return substr($nilai, 0, 8);
@@ -116,7 +111,7 @@ function typeRawat($nilai)
 function jenisRawat($nilai)
 {
 	// dd(($nilai == 1) ? "R Jalan" : (($nilai == 2) ? "R Inap" : "IGD"));
-	return ($nilai == 1) ? "R Jalan" : (($nilai == 2) ? "R Inap" : "IGD");
+	return (typeRawat($nilai) == 1) ? "R Jalan" : ((typeRawat($nilai) == 2) ? "R Inap" : "IGD");
 }
 
 function jenisPelayanan($nilai)
