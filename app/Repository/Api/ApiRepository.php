@@ -11,9 +11,8 @@ class ApiRepository
     protected function sendMessage($params, $status)
     {
         $text = $this->parsingMessage($params, $status);
-        dd($text, config('telegram.bots.mybot.group_id'));
 
-        Telegram::sendMessage([
+        return Telegram::sendMessage([
             'chat_id' => config('telegram.bots.mybot.group_id'),
             'parse_mode' => 'HTML',
             'text' => $text
