@@ -104,7 +104,6 @@ class ScanLis extends ApiRepository
                 $result = $dataScan;
                 $this->sendMessage($dataScan, "Insert");
             }
-    
             return $result;
 
         }  catch(Exception $e) {
