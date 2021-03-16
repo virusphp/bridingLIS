@@ -56,6 +56,13 @@ class LisController extends Controller
             return response()->jsonApi(422, implode(",",$message));    
         }
 
+        $checkData = $this->lis->getDataLis($r->no_reg, $r->no_lab);
+
+        if ($checkData) {
+            $transform = $this->transform->mapLis($checkData);
+            return response()->jsonApi(422, "No Reg dan no Lab sudah ada!!", $transform);
+        }
+
         $dataScan = $this->lis->simpanLis($r);
 
         if (!$dataScan) {   

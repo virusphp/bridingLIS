@@ -114,11 +114,15 @@ class ScanLis extends ApiRepository
 
     public function getDataLis($noReg, $noLab)
     {
-        return DB::table('hasil_pemeriksaan_laborat_file')
-            ->where([ 
+        return DB::table('hasil_pemeriksaan_laborat_file as lab')
+            ->select('lab.tgl_pemeriksaan','lab.no_reg','lab.no_rm','lab.no_lab','lab.file_hasil','lab.user_verified', 'lab.tgl_created','lab.tgl_updated','p.nama_pasien','pg.nama_pegawai')
+            ->join('DBSIMRS.dbo.pasien as p', 'lab.no_rm', '=', 'p.no_rm')
+            ->join('DBSIMRS.dbo.pegawai as pg', 'lab.user_verified', '=', 'pg.kd_pegawai')
+            ->where([
                 ['no_reg', $noReg],
                 ['no_lab', $noLab]
-            ])->first();
+            ])
+            ->first();
     }
 
     public function editLis($noReg, $noLab)

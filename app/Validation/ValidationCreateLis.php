@@ -13,14 +13,14 @@ class ValidationCreateLis
     {
         return Validator::make($request->all(),[
             'tgl_pemeriksaan' => 'required|date',
-            'no_reg'          => [
-                'required',
-                Rule::unique('hasil_pemeriksaan_laborat_file')->where(function($query) use ($request) {
-                    return $query->where('no_rm', $request['no_rm'])
-                                ->where('no_lab', $request['no_lab']);
-                }),
-            ],
-            'no_rm'          => 'required|min:6|max:7',
+            // 'no_reg'          => [
+            //     'required',
+            //     Rule::unique('hasil_pemeriksaan_laborat_file')->where(function($query) use ($request) {
+            //         return $query->where('no_rm', $request['no_rm'])
+            //                     ->where('no_lab', $request['no_lab']);
+            //     }),
+            // ],
+            // 'no_rm'          => 'required|min:6|max:7',
             // 'no_lab'          => 'required|max:13|unique:hasil_pemeriksaan_laborat_file,no_lab,NULL,no_id,no_reg,'.$request['no_lab'],
             'file_hasil'      => 'required|mimes:pdf',
             'user_verified'   => 'required',
