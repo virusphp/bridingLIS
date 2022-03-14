@@ -83,7 +83,7 @@ class ScanLis extends ApiRepository
                     'no_lab'          => $data['no_lab'],
                     'file_hasil'      => $data['file_hasil'],
                     'user_verified'   => $data['user_verified'],
-                    'tgl_created'     => date('Y-m-d')
+                    'tgl_created'     => Carbon::now(),
                 ]);
 
             if (!$simpan) {
@@ -150,7 +150,7 @@ class ScanLis extends ApiRepository
                     'no_rm'           => $data['no_rm'],
                     'file_hasil'      => $data['file_hasil'],
                     'user_verified'   => $data['user_verified'],
-                    'tgl_updated'     => date('Y-m-d')
+                    'tgl_updated'     => Carbon::now()
                 ]);
 
             if (!$update) {
